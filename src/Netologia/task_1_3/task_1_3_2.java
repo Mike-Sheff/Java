@@ -1,7 +1,7 @@
 package Netologia.task_1_3;
 
 import java.util.Scanner;
-/*import java.time.format.*;
+import java.time.format.*;
 import java.time.temporal.TemporalAccessor;
 
 public class task_1_3_2 {
@@ -44,4 +44,4 @@ public class task_1_3_2 {
 
         return false;
   }
-}*/
+}

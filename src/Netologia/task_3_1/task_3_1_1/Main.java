@@ -1,6 +1,5 @@
 package Netologia.task_3_1.task_3_1_1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
