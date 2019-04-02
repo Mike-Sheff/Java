@@ -10,6 +10,9 @@ public class Main {
         String input = "";
         Employee emp;
 
+        System.out.println("Задача: Список сотрудников.");
+        System.out.println();
+        
         emp = new Employee("Петров", "Петр", "Петрович", 30, true,
                 "среднее специальное", "водитель", "транспортный");
         list.add(emp);
@@ -175,6 +178,9 @@ public class Main {
             System.out.print("Хотите завершить исправления? (для завершения, последовательно нажмите кнопку \"Д\" и Enter): ");
             input = scanner.nextLine();
             System.out.println();
+            
+            System.out.println("");
+            System.out.println("До свидания!");
         }
 
 
