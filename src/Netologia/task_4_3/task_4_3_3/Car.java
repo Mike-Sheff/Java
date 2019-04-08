@@ -3,7 +3,7 @@ package Netologia.task_4_3.task_4_3_3;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Car implements Comparator<Car> {
+public class Car implements Comparator<Car>, Comparable<Car>{
     private String number;
     private String Producer;
     private Enum Color;
@@ -72,6 +72,11 @@ public class Car implements Comparator<Car> {
                 ", Producer='" + Producer + '\'' +
                 ", Color='" + Color + '\'' +
                 ", Type=" + Type + '\n';
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return 0;
     }
 }
 
