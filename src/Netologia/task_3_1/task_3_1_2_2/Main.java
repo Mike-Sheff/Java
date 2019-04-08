@@ -1,5 +1,8 @@
 package Netologia.task_3_1.task_3_1_2_2;
 
+import java.util.Arrays;
+import java.util.Random;
+
 import static Netologia.task_3_1.task_3_1_2_2.BubbleSorting.bubbleSorting;
 import static Netologia.task_3_1.task_3_1_2_2.MergeSort.mergeSort;
 import static Netologia.task_3_1.task_3_1_2_2.QuickSort.quickSort;
@@ -72,6 +75,35 @@ public class Main {
         finish = System.nanoTime();
         printDisplay("\nМассив после сортировки:", actual);
         System.out.format("\nВремя выполнения Bubble сортировки: %d \n" , finish - start);
+
+        System.out.println("-------------------------");
+
+        Product[] product = new Product[5];
+        Random random = new Random();
+
+        for (int i = 0; i < product.length; i++) {
+            String name = "Product #" + (random.nextInt(20 - 10 +1) + 10);
+            int price = random.nextInt(10) * 10;
+            String other = "Other # " + (product.length - i);
+            product[i] = new Product(name, price, other);
+        }
+
+        System.out.println("сортировка по price");
+        System.out.println(Arrays.toString(product));
+        Arrays.sort(product);
+        System.out.println(Arrays.toString(product));
+
+        System.out.println("-------------------------");
+        System.out.println("сортировка по name");
+        System.out.println(Arrays.toString(product));
+        Arrays.sort(product, new NameProductComparator());
+        System.out.println(Arrays.toString(product));
+
+        System.out.println("-------------------------");
+        System.out.println("сортировка по other");
+        System.out.println(Arrays.toString(product));
+        Arrays.sort(product, new OtherProductComparator());
+        System.out.println(Arrays.toString(product));
 
     }
 
