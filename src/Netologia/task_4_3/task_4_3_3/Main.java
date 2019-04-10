@@ -17,8 +17,7 @@ public class Main {
 
         System.out.println();
 
-
-
+        //TODO: добавить фильтрацию по типу автомабиля
 
         System.out.println("\nСписок машин:");
 
