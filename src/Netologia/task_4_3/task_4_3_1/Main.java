@@ -23,33 +23,42 @@ public class Main {
         set.add(new Student("Петрова Татьяна Михайловна", "1243-Б", "43221343"));
         set.add(new Student("Иванов Петр Николаевич", "1243-Б", "31231344")); // добавится
 
-
+        printSet(set);
+        
         while (!((input.equals("L")) || (input.equals("l")) || (input.equals("Д")) || (input.equals("д")))) {
             System.out.print("\nВведите информацию о студенте:\n ФИО: ");
             name = scanner.nextLine();
             System.out.print(" Номер группы: ");
             group = scanner.nextLine();
-            //        studentId = "";
-
-            //          while(studentId.equals("")) {
-            System.out.print(" Номер студенческого билета: ");
-            studentId = scanner.nextLine();
-            //TODO: проверку на наличие данного билета в массиве и выдавать возможность введение заново номера билета
-            /*if (set.equals(studentId)) {
-                    System.out.println("Такой номер студенческого уже существует!");
-                    studentId = "";
-                } else {
-
+            
+            while(true) {
+                System.out.print(" Номер студенческого билета: ");
+                studentId = scanner.nextLine();
+                if (set.add(new Student(name, group, studentId))) {
+                    System.out.println("Добавление студента прошло удачно!");
                     break;
-                }
-            }*/
+                } else {
+                    System.out.println("Такой номер студенческого уже существует!");
 
-            set.add(new Student(name, group, studentId));
+                    System.out.print("Хотите исправить номер студенческого? (\"Д\" и Enter): ");
+                    input = scanner.nextLine();
+
+                    if (!((input.equals("L")) || (input.equals("l")) || (input.equals("Д")) || (input.equals("д")))) {
+                        break;
+                    }
+                }
+            }
 
             System.out.print("Хотите завершить ввод? (для завершения, последовательно нажмите кнопку \"Д\" и Enter): ");
             input = scanner.nextLine();
         }
 
+        printSet(set);
+
+        System.out.println("\nДо свидания!");
+    }
+    
+    public static void printSet(Set set){
         System.out.println("\nСписок студентов:");
 
         if (set.isEmpty()) {
@@ -57,7 +66,5 @@ public class Main {
         } else {
             System.out.println(set.toString());
         }
-
-        System.out.println("\nДо свидания!");
     }
 }
