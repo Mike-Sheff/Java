@@ -2,7 +2,7 @@ package Netologia.task_4_4.task_4_4_1;
 
 import java.math.BigDecimal;
 
-public class Product {
+public class Product implements Comparable<Product>{
     String id;
     String name;
     float price;
@@ -50,5 +50,11 @@ public class Product {
     @Override
     public String toString() {
         return id +". '" + name + "\' по цене " + price + " руб.\n" ;
+    }
+
+    @Override
+    public int compareTo(Product o) {
+
+        return this.id.compareTo(o.id);
     }
 }

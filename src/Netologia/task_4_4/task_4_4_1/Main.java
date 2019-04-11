@@ -1,25 +1,30 @@
 package Netologia.task_4_4.task_4_4_1;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
-    public static Set<Product> productSet = new LinkedHashSet<>();
-    public static Set<Storage> storageSet = new LinkedHashSet<>();
-
+    public static List<Product> products;
+    public static List<Storage> storages;
+    
     public static void main(String[] args) {
         boolean exit = true;
-        //TODO: переделать
         Map<Product, Storage> map = new HashMap<>();
 
-        storageSet.add(new Storage("Склад 1","Санкт-Петербург"));
-        storageSet.add(new Storage("Склад 2","Москва"));
+        Storage storage1 = new Storage("Склад 1","Санкт-Петербург");
+        Storage storage2 = new Storage("Склад 2","Москва");
 
-        productSet.add(new Product("1","Хлеб", 5.5f));
-        productSet.add(new Product("2","Булка", 33.3f));
-        productSet.add(new Product("3","Батон", 47.87f));
+        storages = new ArrayList<>(Arrays.asList(storage1,storage2));
 
-        //TODO: как реализовать добавление?
-        map.put(productSet, storageSet);
+        Product product1 = new Product("1","Хлеб", 5.5f);
+        Product product2 = new Product("2","Булка", 33.3f);
+        Product product3 = new Product("3","Батон", 47.87f);
+
+        products = new ArrayList<>(Arrays.asList( product1, product2, product3));
+
+        map.put(products.get(0), storages.get(0));
+        map.put(product2, storage2);
+        map.put(products.get(2), storages.get(0));
 
         System.out.println(map);
 
@@ -40,15 +45,21 @@ public class Main {
             if(scanner.hasNextInt()) {
                 switch (scanner.nextInt()) {
                     case 1:
-                        System.out.println("Список продуктов: \n");
-                        System.out.println(productSet);
+                        System.out.println("\nСписок продуктов:");
+                        for (Product product : products) {
+                            System.out.print(product);
+                        }
+                        System.out.println();
                         break;
                     case 2:
                         addProduct(null);
                         break;
                     case 3:
-                        System.out.println("Список складов: \n");
-                        System.out.println(storageSet);
+                        System.out.println("\nСписок складов:");
+                        for (Storage storage: storages) {
+                            System.out.print(storage);
+                        }
+                        System.out.println();
                         break;
                     case 4:
                         addStorage();
@@ -95,15 +106,13 @@ public class Main {
         }
 
         while (true) {
-            if (id.isEmpty()) {
+            if (id == null) {
+                Scanner scanner2 = new Scanner(System.in);
                 System.out.print("Введите номер продукта: ");
-                id = scanner.next();
+                id = scanner2.next();
             }
 
-            if (productSet.add(new Product(id, name, price))) {
-                System.out.println("Добавление прошло удачно!");
-                break;
-            } else {
+            if (products.contains(id)){
                 System.out.println("Продукт с таким номером уже есть в списке!");
                 id = null;
 
@@ -113,9 +122,19 @@ public class Main {
                 if (!((exit.equals("L")) || (exit.equals("l")) || (exit.equals("Д")) || (exit.equals("д")))) {
                     break;
                 }
+            } else {
+                products.add(new Product(id, name, price));
+                System.out.println("Добавление прошло удачно!");
+                break;
             }
         }
 
+        System.out.println(storages);
+        for (int i = 0; i < ; i++) {
+            
+        }
+        System.out.println("Выберите номер склада: ");
+        
                 //TODO  спрашивать про склад
 
     }
