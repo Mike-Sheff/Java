@@ -3,23 +3,23 @@ package Netologia.task_4_4.task_4_4_1;
 import java.util.*;
 
 public class Main {
-    public static Set<Product> productSet = new HashSet<>();
-    public static Set<Storage> storageSet = new HashSet<>();
+    public static Set<Product> productSet = new LinkedHashSet<>();
+    public static Set<Storage> storageSet = new LinkedHashSet<>();
 
     public static void main(String[] args) {
         boolean exit = true;
+        //TODO: переделать
         Map<Product, Storage> map = new HashMap<>();
 
-        Storage storage1 = new Storage("Склад 1","Санкт-Петербург");
+        storageSet.add(new Storage("Склад 1","Санкт-Петербург"));
         storageSet.add(new Storage("Склад 2","Москва"));
 
-        ArrayList<Product> products = new ArrayList<Product>()new Product("1","Хлеб", 5.5f)
-                                                    , new Product("2","Булка", 33.3f)
-                                                    , new Product("3","Батон", 47.87f);
+        productSet.add(new Product("1","Хлеб", 5.5f));
+        productSet.add(new Product("2","Булка", 33.3f));
+        productSet.add(new Product("3","Батон", 47.87f));
 
-        map.put(product1, storage1);
-        map.put(product2, storage1);
-        map.put(product3, storage1);
+        //TODO: как реализовать добавление?
+        map.put(productSet, storageSet);
 
         System.out.println(map);
 
