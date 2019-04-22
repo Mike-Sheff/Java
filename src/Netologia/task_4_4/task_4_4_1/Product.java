@@ -1,7 +1,5 @@
 package Netologia.task_4_4.task_4_4_1;
 
-import java.math.BigDecimal;
-
 public class Product implements Comparable<Product>{
     String id;
     String name;
