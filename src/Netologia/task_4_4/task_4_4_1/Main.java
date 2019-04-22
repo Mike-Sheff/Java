@@ -1,6 +1,5 @@
 package Netologia.task_4_4.task_4_4_1;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
