@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
     public static final String PATH_USER_DB = "C:\\Users\\Mike\\Downloads\\Study\\Java\\src\\Netologia\\task_4_6\\task_4_6_2\\user.db";
-    public static final String PATH_SERVER_LOG = "C:\\Users\\Mike\\Downloads\\Study\\Java\\src\\Netologia\\task_4_6\\task_4_6_2\\server.log";
+    public static final String PATH_SERVER_LOG = "C:\\Users\\Mike\\Downloads\\Study\\Java\\src\\Netologia\\task_4_6\\task_4_6_2\\server.logg";
 
     public static TreeMap<String, User> userTreeMap = new TreeMap<>();
     public static HashMap<String, Set<String>> userIpHashMap = new HashMap<>();
