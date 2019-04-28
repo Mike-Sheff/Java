@@ -1,9 +1,9 @@
 package Netologia.task_4_4.task_4_4_1;
 
 public class Product implements Comparable<Product>{
-    String id;
-    String name;
-    float price;
+    private String id;
+    private String name;
+    private float price;
 
     public Product(String id, String name, float price) {
         this.id = id;
@@ -52,7 +52,6 @@ public class Product implements Comparable<Product>{
 
     @Override
     public int compareTo(Product o) {
-
         return this.id.compareTo(o.id);
     }
 }

@@ -1,10 +1,13 @@
 package Netologia.task_4_4.task_4_4_1;
 
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Storage {
-    String name;
-    String address;
+    private String name;
+    private String address;
+
+    private Set<Product> storage = new HashSet<>();
 
     public Storage(String name, String address) {
         this.name = name;
@@ -25,6 +28,14 @@ public class Storage {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void addStorage(Product o){
+        storage.add(o);
+    }
+
+    public void removeStorage(Product o){
+        storage.remove(o);
     }
 
     @Override
