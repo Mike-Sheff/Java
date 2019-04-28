@@ -1,4 +1,4 @@
-package task_4_1_1;
+package Netologia.task_4_1.task_4_1_1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
